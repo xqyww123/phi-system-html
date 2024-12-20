@@ -90,7 +90,9 @@
 
 
 </span><span class="keyword1"><span class="keyword"><span>fun</span></span></span><span> </span><span class="entity"><span>error_unprocessed_element_index</span></span><span> </span><span class="entity"><span>ctxt</span></span><span> </span><span class="entity"><span>idx</span></span><span> </span><span class="main"><span>=</span></span><span>
-  </span><span>error</span><span> </span><span class="main"><span>(</span></span><span>Pretty.string_of</span><span> </span><span class="main"><span>(</span></span><span>Pretty.block</span><span> </span><span class="main"><span>(</span></span><span>
+  </span><span>error</span><span> </span><span class="main"><span>(</span></span><span class="keyword2"><span class="keyword"><span>let</span></span></span><span> </span><span class="keyword3"><span class="keyword"><span>open</span></span></span><span> </span><span>Pretty</span><span> </span><span class="keyword2"><span class="keyword"><span>in</span></span></span><span>
+    </span><span>string_of</span><span> </span><span class="main"><span>(</span></span><span>chunks</span><span> </span><span class="main"><span>(</span></span><span>
+      </span><span>block</span><span> </span><span class="main"><span>(</span></span><span>
             </span><span>Pretty.str</span><span> </span><span class="inner_quoted"><span>"Fail to access element "</span></span><span> </span><span>::</span><span>
             </span><span>flat</span><span> </span><span class="main"><span>(</span></span><span>Library.separate</span><span> </span><span class="main"><span>[</span></span><span>Pretty.str</span><span> </span><span class="inner_quoted"><span>"."</span></span><span class="main"><span>]</span></span><span> </span><span class="main"><span>(</span></span><span>map</span><span> </span><span>single</span><span> </span><span class="main"><span>(</span></span><span>
                 </span><span class="entity"><span>HOLogic.dest_list</span></span><span> </span><span class="main"><span>(</span></span><span>Thm.term_of</span><span> </span><span class="entity"><span>idx</span></span><span class="main"><span>)</span></span><span>
@@ -102,7 +104,9 @@
                                 </span><span class="keyword2"><span class="keyword"><span>of</span></span></span><span> </span><span>SOME</span><span> </span><span class="main"><span>(</span></span><span class="entity"><span>x</span></span><span class="main"><span>,</span></span><span> </span><span class="main"><span>_</span></span><span class="main"><span>)</span></span><span> </span><span class="main"><span>=&gt;</span></span><span> </span><span class="entity"><span>x</span></span><span>
                                  </span><span class="main"><span>|</span></span><span> </span><span class="main"><span>_</span></span><span> </span><span class="main"><span>=&gt;</span></span><span> </span><span class="entity"><span>term</span></span><span class="main"><span>)</span></span><span> </span><span>o</span><span>
                   </span><span>snd</span><span> </span><span>o</span><span> </span><span class="entity"><span>HOLogic.dest_prod</span></span><span class="main"><span>)</span></span><span class="main"><span>)</span></span><span class="main"><span>)</span></span><span class="main"><span>)</span></span><span>
-        </span><span class="main"><span>)</span></span><span class="main"><span>)</span></span><span class="main"><span>)</span></span><span>
+        </span><span class="main"><span>)</span></span><span> </span><span>::</span><span> </span><span class="entity"><span>Phi_Reasoners.failure_reasons_of'</span></span><span> </span><span class="entity"><span>ctxt</span></span><span>
+     </span><span class="main"><span>)</span></span><span class="main"><span>)</span></span><span>
+  </span><span class="keyword2"><span class="keyword"><span>end</span></span></span><span class="main"><span>)</span></span><span>
 
 </span><span class="keyword2"><span class="keyword"><span>end</span></span></span></pre>
 </body>
